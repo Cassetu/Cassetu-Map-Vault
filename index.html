@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassetu's Map Vault</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="topbar-brand">
+        Cassetu's Map Vault
+    </div>
+    <div class="search-container">
+        <input type="text" id="mapSearch" placeholder="Search minigames, maps, tags...">
+    </div>
+</div>
+
+<header class="vault-hero">
+    <div class="hero-content">
+        <h1>Welcome to the Vault</h1>
+        <p>Explore, filter, and download custom-built Minecraft minigame maps. Click any map below to view screenshots, details, and get your instant download file.</p>
+    </div>
+</header>
+
+<nav class="filter-container" id="tagFilters">
+    <button class="filter-btn active" data-filter="all">All Maps</button>
+</nav>
+
+<main class="map-grid" id="mapGrid">
+</main>
+
+<div id="mapModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+
+        <h2 id="modalTitle">Map Title</h2>
+        <div id="modalTags" class="modal-tags"></div>
+
+        <div class="carousel">
+            <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+            <div class="carousel-slide">
+                <img id="carouselImage" src="" alt="Map Screenshot">
+            </div>
+            <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+        </div>
+
+        <p id="modalDescription">Map description goes here...</p>
+
+        <div class="download-container">
+            <a id="modalDownload" href="#" download class="download-btn">Download Map</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
