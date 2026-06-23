@@ -261,3 +261,90 @@ body {
     padding: 0.25rem 0.5rem;
     border: 1px solid;
 }
+
+.vault-footer {
+    width:100%;
+    background-image: url('../assets/other/copper_block.png');
+    background-repeat: repeat;
+    background-size: 32px 32px;
+    border-top: 2px solid var(--dark-brown);
+    text-align: center;
+    padding: 2rem 3rem;
+    margin-top: 4rem;
+    max-height:90px;
+}
+
+.footer-copyright {
+    color: #0;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    gap: 2rem;
+    flex-wrap:wrap;
+}
+
+.footer-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    border-radius: 6px;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), filter 0.2s ease;
+    will-change: transform;
+}
+
+.discord-social {
+    background-color: #5865F2;
+}
+
+.yt-social {
+    background-color: #CE1414;
+}
+
+.social-icon:hover {
+    transform: scale(1.1) translateY(-3px);
+    filter: brightness(1.15);
+}
+
+color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.footer-disclaimer {
+    color: var(--dark-brown);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .footer-text-group {
+        text-align: center;
+    }
+}
