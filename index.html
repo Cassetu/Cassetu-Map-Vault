@@ -6,24 +6,56 @@
     <link rel="icon" type="image/png" href="assets/other/vault.png">
     <title>Cassetu's Map Vault</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
 </head>
 <body>
-
-<div class="topbar">
-    <div class="topbar-brand">
-        <img src="assets/other/vault.png" alt="cube" class="brand-icon" />
-        <img src="assets/other/cassetu's_map_vault.png" alt="Cassetu's Map Vault" class="brand-title-img" />
+<div class="navigation-wrapper">
+    <div class="topbar">
+        <div class="topbar-brand">
+            <img src="assets/other/vault.png" alt="cube" class="brand-icon" />
+            <img src="assets/other/cassetu's_map_vault.png" alt="Cassetu's Map Vault" class="brand-title-img" />
+        </div>
+        <button class="search-toggle-btn" id="searchToggle">
+            <img src="assets/icons/search.svg" alt="Search" class="inner-search-icon" />
+            <span class="search-btn-arrow">&#10148;</span>
+        </button>
     </div>
-    <div class="search-container">
-        <img src="assets/icons/search.svg" alt="Search" class="search-icon" />
-        <input type="text" id="mapSearch" placeholder="Search minigames, maps, tags...">
+
+    <div class="search-dashboard" id="searchDashboard">
+        <div class="dashboard-content">
+
+            <div class="dashboard-search-row">
+                <img src="assets/icons/search.svg" alt="Search" class="search-btn-icon" />
+                <input type="text" id="mapSearch" placeholder="Search maps...">
+            </div>
+
+            <div class="dashboard-filter-selectors">
+                <div class="filter-group">
+                    <label>Minecraft Version</label>
+                    <select id="versionFilter">
+                        <option value="all">All Versions</option>
+                        <option value="1.21">1.21</option>
+                        <option value="1.20">1.20</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Game Mode</label>
+                    <select id="modeFilter">
+                        <option value="all">All Modes</option>
+                        <option value="solo">Solo</option>
+                        <option value="multiplayer">Multiplayer / Co-op</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
-
 <header class="vault-hero">
     <div class="hero-content">
         <img src="assets/other/cassetu's_map_vault.png" alt="Cassetu's Map Vault" class="hero-title-img" />
-        <p>Explore, filter, and download custom-built Minecraft minigame maps. Click any map below to view screenshots, details, and get your instant download file.</p>
+        <p>Easy download minigame maps to play with your by yourself or with friends!</p>
     </div>
 </header>
 
