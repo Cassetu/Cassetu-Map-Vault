@@ -1,14 +1,14 @@
 window.MAPS_DATABASE = [
     {
         id: "map-1",
-        title: "Fake Title 1",
-        description: "Fake description",
+        title: "Void",
+        description: "Bare bones parkour map. Simple checkpoint system and respawn. Difficulty: Hard",
         version: "1.21.11",
         mode: "solo",
-        tags: ["Minigame"],
-        downloadUrl: "#",
+        tags: ["Parkour"],
+        downloadUrl: "downloads/void/Void",
         images: [
-            "assets/other/trial-chambers-minecraft.jpg"
+            "downloads/void/img/img-12.png"
         ]
     },
     {
