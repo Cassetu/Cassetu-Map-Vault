@@ -6,7 +6,7 @@ window.MAPS_DATABASE = [
         version: "1.21.11",
         mode: "solo",
         tags: ["Parkour"],
-        downloadUrl: "downloads/void/Void",
+        downloadUrl: "downloads/void/void.zip",
         images: [
             "downloads/void/img/img-12.png"
         ]
