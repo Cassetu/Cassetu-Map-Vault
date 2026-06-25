@@ -31,15 +31,33 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span class="meta-mode">${map.mode}</span>
                     </div>
                     <div class="card-tags">
-                        ${map.tags.map(tag => `<span class="card-tag">${tag}</span>`).join("")}
+                        ${map.tags.map(tag => {
+                            const iconUrl = window.TAG_ICONS && window.TAG_ICONS[tag];
+                            const iconImg = iconUrl ? `<img src="${iconUrl}" alt="" class="tag-icon">` : "";
+                            return `<span class="card-tag">${iconImg}${tag}</span>`;
+                        }).join("")}
                     </div>
-                    <a href="${map.downloadUrl}" class="card-download-btn">Download</a>
+                    <a href="${map.downloadUrl}" class="card-download-btn" data-id="${map.id}">
+                        <img src="assets/icons/download.svg" alt="" class="download-icon">
+                        <span>Download</span>
+                    </a>
                 </div>
             `;
 
             mapGrid.appendChild(card);
         });
     }
+
+    mapGrid.addEventListener("click", (e) => {
+        const btn = e.target.closest(".card-download-btn");
+        if (!btn) return;
+
+        btn.classList.add("downloaded");
+        btn.innerHTML = `
+            <img src="assets/icons/check.svg" alt="" class="download-icon">
+            <span>Downloaded</span>
+        `;
+    });
 
     function filterMaps() {
         if (!window.MAPS_DATABASE) return;

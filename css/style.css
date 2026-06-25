@@ -12,6 +12,7 @@
 }
 
 :root {
+    --pale-brown:#efccc3;
     --light-brown:#D37860;
     --dark-brown:#311B15;
 }
@@ -225,9 +226,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 98%;
+    margin: 2rem auto;
 }
 
 .map-card {
@@ -236,6 +237,14 @@ body {
     border: 1px solid;
     padding: 1rem;
     cursor: pointer;
+    background: linear-gradient(to bottom, var(--pale-brown), #e09785);
+    border: 3px solid var(--dark-brown);
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    height:480px;
+}
+
+.map-card:hover {
+    transform: translateY(-6px);
 }
 
 .map-card img {
@@ -347,4 +356,108 @@ color: #ffffff;
     .footer-text-group {
         text-align: center;
     }
+}
+
+.card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.5rem;
+    background: linear-gradient(to bottom, var(--dark-brown), #593126);
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius:10px;
+}
+
+.card-tag .tag-icon {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+    display: inline-block;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.card-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content:center;
+    gap: 0.5rem;
+    text-decoration: none;
+    padding:0.6rem 1.2rem;
+    background-color: var(--light-brown);
+    color: #fff;
+    font-weight: bold;
+    font-size:0.95rem;
+    margin-top: 0.6rem;
+    align-self: center;
+    width: fit-content;
+    transition:background-color 0.2s ease, transform 0.1 ease;
+}
+
+.card-download-btn:hover {
+    background-color: #e5876e;
+}
+
+.download-icon {
+    width:32px !important;
+    height:32px !important;
+    object-fit: contain;
+    display:block;
+    margin:0 !important;
+    padding: 0;
+}
+
+.card-download-btn.downloaded {
+    background-color: #2e7d32;
+    cursor: default;
+    pointer-events: none;
+}
+
+.card-info {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--dark-brown);
+    margin-bottom: 0.5rem;
+    line-height:1.2;
+    text-align: center;
+}
+
+.card-description {
+    text-align:left;
+    margin=bottom:0;
+}
+
+.card-image-container {
+    border:3px solid var(--dark-brown);
+    width:100%;
+    height:40vh;
+    overflow:hidden;
+    margin-bottom:0.5rem;
+}
+
+.card-meta {
+    display:flex;
+    gap:.5rem;
+    margin-bottom:1rem;
+    justify-content:center;
+}
+
+.meta-version, .meta-mode {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform:uppercase;
+    padding:0.3rem 0.6rem;
+    background-color:#49d08c;
+    border-radius:20px;
+    border: 3px solid #1f7a63;
 }
