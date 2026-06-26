@@ -6,11 +6,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const mapSearch = document.getElementById("mapSearch");
     const versionFilter = document.getElementById("versionFilter");
     const modeFilter = document.getElementById("modeFilter");
+    const tagFiltersContainer = document.getElementById("tagFilters");
+
+    let activeTagFilter = "all";
 
     searchToggle.addEventListener("click", () => {
         searchDashboard.classList.toggle("open");
         searchToggle.classList.toggle("active");
     });
+
+    function renderTagFilters() {
+        if (!window.MAPS_DATABASE) return;
+
+        const allTags = new Set();
+        window.MAPS_DATABASE.forEach(map => {
+            if (map.tags) {
+                map.tags.forEach(tag => allTags.add(tag));
+            }
+        });
+
+        tagFiltersContainer.innerHTML = ``;
+
+        allTags.forEach(tag => {
+            const isActive = activeTagFilter === tag;
+            tagFiltersContainer.innerHTML += ``;
+        })
+    }
 
     function renderMaps(maps) {
         mapGrid.innerHTML = "";
@@ -74,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const matchesMode = selectedMode === "all" || map.mode === selectedMode;
 
-            return matchesSearch && matchesVersion && matchesMode;
+            const matchesTag = activeTagFilter === "all" || map.tags.includes(activeTagFilter);
+
+            return matchesSearch && matchesVersion && matchesMode && matchesTag;
         });
 
         renderMaps(filtered);
@@ -83,8 +106,16 @@ document.addEventListener("DOMContentLoaded", () => {
     mapSearch.addEventListener("input", filterMaps);
     versionFilter.addEventListener("change", filterMaps);
     modeFilter.addEventListener("change", filterMaps);
+    tagFiltersContainer.addEventListener("click", (e) => {
+        const btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));;
+        activeTagFilter = btn.getAttribute("data-filter");
+        filterMaps();
+    })
 
     if (window.MAPS_DATABASE) {
+        renderTagFilters();
         renderMaps(window.MAPS_DATABASE);
     }
 });
