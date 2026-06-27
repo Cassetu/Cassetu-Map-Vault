@@ -66,7 +66,7 @@ body {
     align-items:center;
     justify-content: center;
     gap:0.3rem;
-    padding:0.5rem 1.75rem;
+    padding:0.5rem 1.15rem;
     cursor:pointer;
     border:2px solid var(--dark-brown);
     background-color: var(--light-brown);
@@ -76,8 +76,9 @@ body {
 .search-btn-arrow {
     display: inline-block;
     transform: rotate(90deg);
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     transition: transform 0.2s ease;
+    margin-bottom:3px;
 }
 .search-dashboard {
     width: 100%;
@@ -128,6 +129,17 @@ body {
     width:23px;
     height: auto;
     filter: brightness(0);
+}
+
+.search-text {
+    font-family: 'MinecraftCustom', sans-serif;
+    font-size: 1.2rem;
+}
+
+.inner-search-icon {
+    width:23px;
+    height:auto;
+    margin-bottom:5px;
 }
 
 .dashboard-search-row input {
