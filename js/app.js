@@ -25,11 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        tagFiltersContainer.innerHTML = ``;
+        tagFiltersContainer.innerHTML = `<button class="filter-btn ${activeTagFilter === "all" ? "active" : ""}" data-filter="all">All Maps</button>`;
 
         allTags.forEach(tag => {
             const isActive = activeTagFilter === tag;
-            tagFiltersContainer.innerHTML += ``;
+
+            const iconUrl = window.TAG_ICONS && window.TAG_ICONS[tag];
+            const iconImg = iconUrl ? `<img src="${iconUrl}" alt="" class="tag-icon">` : "";
+
+            tagFiltersContainer.innerHTML += `
+                <button class="filter-btn ${isActive ? "active" : ""}" data-filter="${tag}">
+                    ${iconImg}<span>${tag}</span>
+                </button>
+            `;
         })
     }
 
@@ -110,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const btn = e.target.closest(".filter-btn");
         if (!btn) return;
         document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));;
+        btn.classList.add("active");
         activeTagFilter = btn.getAttribute("data-filter");
         filterMaps();
     })

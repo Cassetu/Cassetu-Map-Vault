@@ -31,5 +31,17 @@ window.MAPS_DATABASE = [
         images: [
             "downloads/4-button/img-6.png"
         ]
-    }
+    },
+    {
+        id: "map-3",
+        title: "Example",
+        description: "Example.",
+        version: "1.20.1",
+        mode: "multiplayer",
+        tags: ["Hide & Seek"],
+        downloadUrl: "#",
+        images: [
+            "assets/other/trial-chambers-minecraft.jpg"
+        ]
+    },
 ];

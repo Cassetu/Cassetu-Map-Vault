@@ -102,7 +102,7 @@ body {
 }
 
 .search-dashboard.open {
-    max-height:250px;
+    max-height:350px;
     opacity:1;
     transform:translateY(0);
 }
@@ -140,6 +140,8 @@ body {
 }
 
 .dashboard-filter-selectors {
+    display:flex;
+    justify-content:center;
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
@@ -217,11 +219,46 @@ body {
 }
 
 .filter-btn {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 1rem;
+    background: #fff;
+    border: 3px solid var(--dark-brown);
+    color: var(--dark-brown);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 10px;
     cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
+.filter-btn:hover {
+    transform: translateY(-2px);
+    background-color: var(--pale-brown);
+}
+
+.filter-btn .tag-icon {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+    display: inline-block;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    filter: brightness(0);
+    transition: filter 0.15s ease;
+}
+
+.filter-btn.active {
+    background: linear-gradient(to bottom, var(--dark-brown), #593126);
+    color: #fff;
+    transform: translateY(0);
+}
+.filter-btn.active .tag-icon {
+    filter: none;
+}
 .map-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -337,11 +374,6 @@ body {
     filter: brightness(1.15);
 }
 
-color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: bold;
-}
-
 .footer-disclaimer {
     color: var(--dark-brown);
     font-size: 0.8rem;
@@ -434,7 +466,7 @@ color: #ffffff;
 
 .card-description {
     text-align:left;
-    margin=bottom:0;
+    margin-bottom:0;
 }
 
 .card-image-container {
@@ -461,3 +493,4 @@ color: #ffffff;
     border-radius:20px;
     border: 3px solid #1f7a63;
 }
+
